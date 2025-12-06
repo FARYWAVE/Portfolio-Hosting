@@ -1,0 +1,300 @@
+@import "header.css";
+@import "footer.css";
+
+:root {
+    --bg: #000000;
+    --bg-secondary: #0C0C0C;
+    --primary: #ffffff;
+    --secondary: #989898;
+    --accent: #7003CA;
+    --anchor: #757575;
+    --anchor-hover: #c179fd;
+    --red: #c30000;
+
+    --fs-title: 3rem;
+    --fs-section-title: 2.5rem;
+    --fs-subsection-title: 1.8rem;
+    --fs-text: 1.1rem;
+
+    --header-height: calc(var(--icon-size) * 2.5);
+    --main-content-height: 0px;
+    --footer-height: calc(100vh - var(--header-height) * 2);
+    --icon-size: calc(var(--fs-text) * 1.5);
+}
+
+html::-webkit-scrollbar {
+    width: 1.3vw;
+    min-width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--bg);
+    cursor: url('../img/cursor2inactive.png') 14 14, auto;
+    border-left: var(--bg-secondary) solid 3px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bg-secondary);
+    border: var(--primary) solid 3px;
+    cursor: url('../img/cursor2.png') 14 14, auto;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+    border: var(--accent) solid 3px;
+    cursor: url('../img/cursor2.png') 14 14, auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary);
+    cursor: url('../img/cursor2.png') 14 14, auto;
+    text-shadow: 2px 2px 2px var(--anchor);
+}
+
+a p, a h2 {
+    text-shadow: none;
+}
+
+a:hover {
+    cursor: url('../img/cursor2.png') 14 14, auto;
+    color: var(--secondary);
+}
+
+button, button * {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: url('../img/cursor2.png') 14 14, auto;
+}
+
+button:hover, button:hover * {
+    cursor: url('../img/cursor2.png') 14 14, auto;
+}
+
+@font-face {
+    font-family: "Ultrakill";
+    src: url("../fonts/ultrakill.ttf") format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "UltraRu";
+    src: url("../fonts/rus_pixel.ttf") format("truetype");
+    font-style: normal;
+}
+
+html {
+    image-rendering: pixelated;
+    scroll-behavior: smooth;
+    background-color: var(--bg);
+    color: var(--primary);
+    font-size: var(--fs-text);
+    font-family: "Ultrakill", sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    cursor: url('../img/cursor2inactive.png') 14 14, auto;
+}
+
+body h1, body h2, body h3, body a {
+    font-weight: normal;
+}
+
+.main-content {
+    z-index: 1;
+    max-width: 1100px;
+    height: fit-content;
+    margin: 0 auto;
+    padding-inline: 1rem;
+    padding-bottom: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: calc(var(--footer-height) - var(--main-content-height) + var(--header-height) * 2);
+}
+
+#contacts {
+    scroll-margin-top: calc(var(--header-height) * 0.95);
+}
+
+.section-1-column, .section-2-column {
+    z-index: 100;
+    display: flex;
+    width: 80%;
+    padding: 0 10% var(--fs-subsection-title);
+    flex-direction: column;
+}
+
+.section-heading {
+    font-size: var(--fs-section-title);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--fs-section-title) / 4);
+    margin-bottom: calc(var(--fs-section-title) / 2);
+}
+
+.section-heading .line-1, .section-heading .line-2 {
+    flex: 1;
+    height: calc(var(--fs-section-title) / 7);
+    background: var(--primary);
+}
+
+.section-heading .line-1 {
+    flex: none;
+    width: 7%;
+}
+
+.section-heading .heading-text {
+    white-space: nowrap;
+}
+
+.section-columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 5%;
+    padding: 0 5%;
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: min-content;
+    gap: calc(var(--fs-subsection-title) * 1.7);
+}
+
+.column .section-columns {
+    padding: 0;
+}
+.section-1-column .column {
+    padding: 0 5%;
+}
+
+.subsection {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: min-content;
+    justify-content: center;
+    padding: calc(var(--fs-subsection-title) * 1.8) var(--fs-subsection-title);
+    gap: var(--fs-text);
+}
+
+
+
+.subsection a h3, .subsection div h3 {
+    padding-bottom: calc(var(--fs-text) / 5);
+}
+
+.subsection div {
+    display: flex;
+    flex-direction: column;
+}
+
+.long-header {
+    padding-top: 5rem;
+}
+
+.subsection::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: calc(var(--fs-subsection-title) / 1.2);
+    height: calc(var(--fs-subsection-title) / 1.2);
+
+    border-top: calc(var(--fs-section-title) / 7) solid var(--accent);
+    border-right: calc(var(--fs-section-title) / 7) solid var(--accent);
+}
+
+.subsection::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: calc(var(--fs-subsection-title) / 1.2);
+    height: calc(var(--fs-subsection-title) / 1.2);
+
+    border-bottom: calc(var(--fs-section-title) / 7) solid var(--accent);
+    border-left: calc(var(--fs-section-title) / 7) solid var(--accent);
+}
+
+.subsection::before,
+.subsection::after {
+    transition: transform 0.3s ease;
+}
+
+.subsection:hover::before {
+    transform: translate(6px, -6px);
+}
+
+.subsection:hover::after {
+    transform: translate(-6px, 6px);
+}
+
+.subsection-header {
+    width: 80%;
+    position: absolute;
+    top: calc(var(--fs-subsection-title) / 3);
+    left: calc(var(--fs-subsection-title) / 5);
+    font-size: var(--fs-subsection-title);
+    color: var(--accent);
+    margin: 0;
+    padding: 0;
+}
+
+.subsection p, h3, a {
+    font-size: var(--fs-text);
+    margin: 0;
+}
+
+.subsection p {
+    color: var(--secondary);
+}
+
+.clickable:hover {
+    color: var(--primary);
+}
+
+@media (max-width: 1000px) {
+    :root {
+        --fs-title: 2.5rem;
+        --fs-section-title: 1.9rem;
+        --fs-subsection-title: 1.3rem;
+        --fs-text: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    html::-webkit-scrollbar {
+        display: none;
+    }
+    .section-2-column .section-columns {
+        flex-direction: column;
+        gap: calc(var(--fs-subsection-title) * 1.7);
+    }
+
+    .section-1-column, .section-2-column, .column, .section-columns {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .long-header {
+        padding-top: calc(var(--fs-subsection-title) * 1.8);
+    }
+}
+
+@media (max-width: 370px) {
+    .long-header {
+        padding-top: calc(var(--fs-subsection-title) * 2.8);
+    }
+}

@@ -1,0 +1,87 @@
+.main-content {
+    top: calc(var(--footer-height) - var(--main-content-height) + var(--header-height) * 2);
+}
+
+#skills, #experience, #projects, #education {
+    scroll-margin-top: calc(var(--header-height) * 1.2);
+}
+
+#introduction {
+    align-self: start;
+    scroll-margin-top: 500px;
+    height: calc(100vh - var(--header-height));
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 4vw;
+}
+
+#introduction h1,
+#introduction h2,
+#introduction p {
+    z-index: 100;
+    margin: 0;
+    text-shadow: 2px 2px 1px rgba(0,0,0,1);
+}
+
+#introduction h1 {
+    font-size: var(--fs-title);
+}
+
+#introduction h2 {
+    font-size: var(--fs-subsection-title);
+    color: var(--accent);
+    margin-bottom: var(--fs-subsection-title);
+}
+
+#introduction p {
+    padding-bottom: calc(var(--fs-title) * 2);
+}
+
+.profile-picture-container {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    max-width: 100vw;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.profile-picture {
+    position: relative;
+    height: 100%;
+    align-self: center;
+}
+
+.profile-picture-overlay {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,0);
+    pointer-events: none;
+    transition: opacity 0.05s linear;
+}
+
+@media (max-width: 1000px) {
+    #introduction .description {
+        width: 70vw;
+    }
+
+    .profile-picture {
+        position: absolute;
+        right: -10%;
+    }
+}
+
+@media (max-width: 500px) {
+    .profile-picture {
+        position: absolute;
+        right: -50%;
+    }
+}
