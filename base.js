@@ -118,7 +118,6 @@ function localize() {
     const fileName = fullPath.substring(fullPath.lastIndexOf('/') + 1);
     const page = fileName.substring(0, fileName.lastIndexOf('.')).replace("index", "main");
     const lang = navigator.language.includes("ru") ? "ru" : "en";
-    // @ts-ignore
     if (lang === "ru") {
         document.body.style.fontFamily = "UltraRu";
         Object.entries(originalFonts).forEach(([varName, value]) => {
