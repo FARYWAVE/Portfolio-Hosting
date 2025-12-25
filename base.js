@@ -66,7 +66,7 @@ function enableNavHighlight() {
                 break;
             }
         }
-        const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+        const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 100;
         if (atBottom) {
             currentSection = sections[sections.length - 1];
         }
