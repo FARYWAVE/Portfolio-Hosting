@@ -47,7 +47,7 @@ function enableNavHighlight() {
             const offsetHeight = link.offsetHeight;
             const multiplier = navigator.language.includes("ru") ? 11 : 16;
             //const multiplier = 11;
-            highlight.style.top = offsetTop - fs * multiplier + "px";
+            highlight.style.top = offsetTop + "px";
             highlight.style.left = "0";
             highlight.style.width = "100%";
             highlight.style.height = offsetHeight + fs * 4 + "px";
